@@ -20,7 +20,7 @@ function createBoard(){ //Create array with 8 subarrays containing all 0s repres
 
 printBoard(board)
 function printBoard(board){ //Prints the board to console for debuging
-    for(i of board){
+    for(let i of board){
         console.log(i)
     }
 }
@@ -193,7 +193,7 @@ function getCursorPosition(canvas, event) {
         return 0;
     }
 
-    xSet = getLocation(x);
-    ySet = getLocation(y);
+    let xSet = getLocation(x);
+    let ySet = getLocation(y);
     input(xSet,ySet)
 }

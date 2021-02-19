@@ -1,0 +1,13 @@
+.row{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 10px;
+}
+.row > div{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2px;
+}
+.inputStart{
+    grid-row: auto;
+}

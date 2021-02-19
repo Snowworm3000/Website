@@ -222,12 +222,12 @@ var checkUsers = firebase.database().ref("users")
 checkUsers.on('value', function(snapshot){
     user = snapshot.val();
     usersObject = user
-    print(user);
+    logUsers(user);
     leaderboardArray(user);
 })
 
 usersList = []
-function print(user){
+function logUsers(user){
     usersList = []
     for(i in user){
     usersList.push(i)

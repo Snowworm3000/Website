@@ -19,13 +19,11 @@ var imgData = ctx.createImageData(width, height);
 var data = imgData.data;
 
 
-// const minS = document.getElementById("min")
-// const maxS = document.getElementById("max")
-const zoom = document.getElementById("zoom")
-const x = document.getElementById("x")
-const y = document.getElementById("y")
-let maxS = zoom.value;
-let minS = zoom.value
+const minS = document.getElementById("min")
+const maxS = document.getElementById("max")
+// const zoom = document.getElementById("zoom")
+// let maxS;
+// let minS = maxS = zoom;
 console.log(zoom);
 
 function round(n){
@@ -37,28 +35,18 @@ function map(value, inputS, inputE, outputS, outputE){
     return outputS + slope * (value - inputS);
 }
 
-zoom.addEventListener("input",move)
-x.addEventListener("input",move)
-y.addEventListener("input",move)
+minS.addEventListener("input",move)
+maxS.addEventListener("input",move)
 
 move()
 function move(){
-// maxS = zoom.value **0.5;
-// minS = zoom.value **0.5;
-let xVal = parseInt(x.value);
-let yVal = parseInt(y.value);
-maxS = parseInt(zoom.value);
-minS = parseInt(zoom.value);
-minS += xVal;
-maxS += yVal;
-
-console.log(minS,maxS)
+console.log(minS.value,maxS.value)
 let count = maxIterations = 100
 for (let x = 0; x < width; x++){
     for (let y = 0; y < height; y++){
 
-        let a = map(x, 0, width, -minS, maxS);
-        let b = map(y,0,height,-minS,maxS);
+        let a = map(x, 0, width, -minS.value, maxS.value);
+        let b = map(y,0,height,-minS.value,maxS.value);
 
         let ca = a;
         let cb = b;
