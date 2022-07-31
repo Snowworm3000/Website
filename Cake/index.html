@@ -185,6 +185,18 @@ window.onload = function() {
         }, onMicrophoneGranted, onMicrophoneDenied);
     } catch (e) {
         alert('getUserMedia threw exception :' + e);
+        navigator.mediaDevices.getUserMedia(
+        {
+            "audio": {
+                "mandatory": {
+                    "googEchoCancellation": "false",
+                    "googAutoGainControl": "false",
+                    "googNoiseSuppression": "false",
+                    "googHighpassFilter": "false"
+                },
+                "optional": []
+            },
+        }, onMicrophoneGranted, onMicrophoneDenied);
     }
 
 }
